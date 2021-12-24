@@ -1,0 +1,369 @@
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		ul{
+			list-style-type: none;
+		}
+		a{
+			text-decoration: none;
+			color: #000;
+		}
+		html{
+			background-color: #4D335B;
+		}
+		@font-face{
+			font-family: "Ambarella";
+			src: url("../font-size/Inconsolata/Inconsolata-Regular-2.ttf")format("truetype"),url("../font-size/Inconsolata/Inconsolata-dz-1.otf")format("otf");
+		}
+		body{
+			background-image: linear-gradient(to bottom,#0C0E27,#4D335B);
+			width: 100vw;
+			height: 100vh;
+			font-family: "Ambarella";
+		}
+/*		开场动画*/
+		.loading{
+			height: 100vh;
+			width: 100vw;
+			position: absolute;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.loading>div{
+			position: fixed;
+		}
+		#Santa_Claus{
+			position: relative;
+		}
+		.santa_class{
+			animation: loading 1s linear;
+		}
+		@keyframes loading{
+			0% {
+				transform: scale(1.1);
+			}
+			10% {
+				transform: scale(1.0);
+			}
+			20% {
+				transform: scale(1.2);
+			}
+			30% {
+				transform: scale(1.0);
+			}
+			40% {
+				transform: scale(1.3);
+			}
+			50% {
+				transform: scale(1.0) rotate(0deg);
+			}
+			100% {
+				transform: scale(0.1) rotate(360deg);
+			}
+		}
+/*		雪花*/
+		.snow_div{
+			position: absolute;
+			z-index: 1;
+		}
+		.snow_div>div{
+			color: #fff;
+		}
+/*		模板1-字节跳动*/
+		.text{
+			height: 100vh;
+			justify-content: center;
+			align-items: center;
+			display: none;
+			position: absolute;
+			left: 0px;
+			right: 0px;
+			margin: 0px auto;
+		}
+		.text>div{
+			text-align: center;
+		}
+		.text>div>span{
+			font-size: 60px;
+			-webkit-text-stroke:0.2px #fff;
+			-webkit-text-fill-color:#F5AF00;
+			font-weight: bold;
+			animation: td 0.2s linear;
+			animation-delay: calc(0.2s * var(--i));
+			transition: ease 1s;
+			position: relative;
+		}
+		@keyframes td{
+			0% {
+				bottom:0px;
+			}
+			50% {
+				bottom:30px;
+			}
+			100% {
+				bottom:0px;
+			}
+		}
+/*		圣诞树*/
+		.tree{
+			width: 100vw;
+			height: 100vh;
+			justify-content: center;
+			align-items: center;
+			margin: 0px auto;
+			display: none;
+			text-align: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		.book{
+			width: 300px;
+			height: 400px;
+			position: relative;
+			transform-style: preserve-3d;
+			box-shadow: 10px 20px 40px rgb(0,0,0,0.25);
+			background-color: #fff;
+			cursor: pointer;
+			transition: ease 1s;
+			transform: perspective(1000px) rotateX(0deg) rotateZ(10deg) rotateY(-10deg);
+		}
+		.details{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+		}
+		.content{
+			padding: 0px 10px;
+			width: 100%;
+			height: 100%;
+			word-break: break-all;
+			background-image: radial-gradient(#B90006,#770004)
+		}
+		.content>img{
+			width: 100px;
+			height: 100px;margin-top: 20px;
+		}
+		.content>h2{
+			color: #FFFFFF;
+		}
+		.content>p{
+			text-align: left;
+			line-height: 40px;
+			text-decoration: underline;
+			color: rgba(255,255,255,0.8);
+		}
+		.content>span:hover{
+			color: #FDFD5C;
+		}
+		.content>span{
+			float: right;
+			margin-top: 15px;
+			display: inline-block;
+			z-index: 10;
+			cursor: pointer;
+			transition: ease .5s;
+		}
+		.imgbook{
+			position: relative;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			transform-origin: left;
+			transform-style: preserve-3d;
+			background-color: #000000;
+			transition: ease 1s;
+		}
+		.imgbook>img{
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transform-style: preserve-3d;
+		}
+		.imgbook_class{
+			transform: rotateY(-180deg);
+		}
+		.book_class{
+			transform: translateX(50%);
+		}
+		@media(max-width:480px){
+			.book{
+				width: 240px;
+				height: 400px;
+			}
+			.content>p{
+				line-height: 30px;
+			}
+		}
+/*		祝福*/
+		.blessing{
+			justify-content: center;
+			z-index: 10;
+			position: relative;
+			display: none;
+		}
+		.blessing_push{
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			margin: 20px 0px;
+		}
+		.blessing_push>input:nth-child(1){
+			padding: 12px 20px;
+			border-radius: 50px;
+			width: 500px;
+			border: 3px solid #4B3259;
+		}
+		.blessing_push>input:nth-child(2){
+			padding: 12px 20px;
+			border-radius: 50px;
+			background-color: #fff;
+			border: 3px solid #4B3259;
+			margin: 0px 20px;
+		}
+		.blessing_push>span{
+			color: #fff;
+			cursor: pointer;
+		}
+		.blessing_push>span:hover{
+			color: #FDFD5C;
+		}
+		.blessing_content>span{
+			position: absolute;
+			color: #F5AF00;
+			padding: 8px 14px;
+			background-color: #fff;
+			border-radius: 50px;
+			white-space: nowrap;
+		}
+		@media(max-width:480px){
+			.blessing_push>input:nth-child(1){
+				width: 200px;
+			}
+		}
+/*		倒计时*/
+		.time{
+			width: 100vw;
+			height: 100vh;
+			justify-content: center;
+			align-content: center;
+			position: absolute;
+			flex-wrap: wrap;
+			background-size: cover;
+			display: none;
+		}
+		.time>p{
+			width: 100%;
+			text-align: center;
+			color: #E3A820;
+			font-size: 18px;
+			margin: 15px 0px;
+		}
+		.time>h2{
+			width: 100%;
+			font-size: 45px;
+			color: #fff;
+			text-align: center;
+			margin: 25px 0px;
+		}
+		.time>div{
+			width: 200px;
+			margin: 10px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+			
+		}
+		.time>div>p:nth-child(1){
+			width: 100px;
+			height: 100px;
+			font-size: 28px;
+			font-weight: bold;
+			border-radius: 20px 20px 0px 0px;
+			margin: 0px 50px;
+			color: #fff;
+			background-color: #E4AD2E;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transition: ease 1s;
+		}
+		.time>div>p:nth-child(2){
+			width: 100px;
+			height: 25px;
+			margin: 0px 50px;
+			background-color: #FFF;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		@media(max-width:768px){
+			.time>div{
+				width: 250px !important;
+			}
+		}
+		@media(max-width:480px){
+			.time>div{
+				width: 200px !important;
+			}
+		}
+/*	模块五-离场*/
+		.fadeout{
+			width: 100vw;
+			height: 100vh;
+			background-size: cover;
+			position: absolute;
+			justify-content: center;
+			align-items: center;
+			display: none;
+		}
+		.fadeout>h2{
+			font-size: 60px;
+			color: #fff;
+			display: none;
+			transition: ease 1s;
+			text-align: center;
+		}
+		.fadeout_class{
+			opacity: 1 !important;
+		}
+		.fadeout>img{
+			width: 40%;
+			position: absolute;
+			left: 0px;
+			bottom: 100px;
+			transform: rotate(-25deg);
+		}
+	@media(max-width:750px){
+	/*		圣诞树*/
+		.imgbook_class{
+			transform: translateY(-100%) rotateX(-180deg);
+		}
+		.book_class{
+			transform: translateX(0%);
+		}
+/*	祝福*/
+		.blessing_push>input:nth-child(1){
+			padding: 8px 10px;
+			width: 100px;
+		}
+		.blessing_push>input:nth-child(2){
+			padding: 8px 10px;
+		}
+		.time>p{
+			font-size: 15px;
+			margin: 15px 0px;
+		}
+		.time>h2{
+			width: 100%;
+			font-size: 35px;
+		}
+	}
