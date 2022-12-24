@@ -1,0 +1,104 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Merry Christmas</title>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+<!--	背景音乐-->
+	<audio src="audio/yummyye.flac" autoplay id="audio" loop></audio>
+<!--	背景-->
+	<div class="snow_div"></div>
+<!--	开场动画-->
+	<div class="loading">
+		<div>
+			<div>
+				<img src="images/圣诞老人.png" alt="Santa Claus" id="Santa_Claus">
+			</div>
+		</div>
+	</div>
+<!--	模块1-字节跳动-->
+	<div class="text">
+		<div>
+			<span style="--i:1">M</span>
+			<span style="--i:2">e</span>
+			<span style="--i:3">r</span>
+			<span style="--i:4">r</span>
+			<span style="--i:5">y</span>
+			<br/>
+			<span style="--i:6">C</span>
+			<span style="--i:7">h</span>
+			<span style="--i:8">r</span>
+			<span style="--i:9">i</span>
+			<span style="--i:10">s</span>
+			<span style="--i:11">t</span>
+			<span style="--i:12">m</span>
+			<span style="--i:13">a</span>
+			<span style="--i:14">s</span>
+			<span style="--i:15">!</span>
+		</div>
+	</div>
+<!--	模块2-圣诞树-->
+	<div class="tree">
+<!--		圣诞贺卡-->
+		<div class="book">
+			<div class="imgbook">
+				<img src="images/fengmian.jpg" alt="fm">
+			</div>
+			<div class="details">
+				<div class="content">
+					<img src="images/鹿.png" alt="huahuan">
+					<h2>Greeting Card</h2>
+					<p>Yu kaiyan.<br/>Today is Christmas and 225 days we have been together I will always love you  Wish you a merry Christmas and always love me!<span id="author">—CWQ</span></p>
+					<span>Next</span>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--	模块3-弹幕祝福-->
+	<div class="blessing">
+		<div class="blessing_push">
+			<input type="text" role="textbox" placeholder="Blessing">
+			<input type="button" role="button" value="Release" id="push_submit">
+			<span>Next</span>
+		</div>
+		<div class="blessing_content">
+			
+		</div>
+	</div>
+<!--	模块4-圣诞倒计时-->
+	<div class="time">
+		<p>Distance from Christmas</p>
+		<h2>2022 - 12 - 25</h2>
+		<div>
+			<p id="day"></p>
+			<p>DAYS</p>
+		</div>
+		<div>
+			<p id="hou"></p>
+			<p>Hours</p>
+		</div>
+		<div>
+			<p id="min"></p>
+			<p>Minutes</p>
+		</div>
+		<div>
+			<p id="sec"></p>
+			<p>Seconds</p>
+		</div>
+	</div>
+<!--	模块五-结束-->
+	<div class="fadeout">
+		<h2>Merry Christmas</h2>
+		<img src="images/lu.png" alt="lu">
+	</div>
+</body>
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/index.js"></script>
+</html>
